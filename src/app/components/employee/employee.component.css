@@ -1,0 +1,17 @@
+table {
+    background-color: rgba(163, 190, 241, 0.637);
+    width: 550px;   
+}
+
+th {
+    background-color: rgba(120, 161, 236, 0.884);;
+}
+
+h3 {
+    margin-left: 50px;
+}
+
+.container {
+    background-color: rgba(209, 219, 238, 0.637);
+}
+

@@ -1,0 +1,45 @@
+<div class= "container">
+  <h3>{{title}}</h3>
+
+ <table class="table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Actions:</th>
+    </tr>
+
+      <tr *ngFor="let employee of employees">
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.sex}}</td>
+          <button type="button" class="btn btn-outline-secondary" 
+          (click)="updateEmployee(employee)">Update</button>
+          <button type="button" class="btn btn-outline-danger" 
+          (click)="deleteEmployee(employee.id)">Delete</button>          
+        </tr>
+  </table> 
+  <!-- <ul>
+    <li *ngFor="let employee of employees">
+      First Name: {{employee.firstName}} Last Name: {{employee.lastName}} 
+      <button (click)="deleteEmployee(employee.id)">Delete</button>
+    </li>
+  </ul>  -->
+  <p>*Gender:  0 - unspecified,  1 - female,  2 - male </p>
+  <div class="form1">
+    <input  type="text" [(ngModel)] ="firstName">
+    <input  type="text"  [(ngModel)] ="lastName">
+    
+    <label for="sex">Enter your sex</label>
+    <select name="sex" [(ngModel)]="sex" id="sex">
+      <option value="Unspecified">Unspecified</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+    </select>
+      
+      <button type="button" *ngIf="editMode == false" class="btn btn-outline-primary" (click)="addEmployee()">Add new employee</button>
+      <button type="button" *ngIf="editMode == true" class="btn btn-outline-primary" (click)="sendUpdateEmployee()">Save changes</button>
+    </div>
+  </div> 
+
+
